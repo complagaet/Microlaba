@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=1100, user-scalable=no">
+		<meta http-equiv="Cache-control" content="No-Cache">
+		<meta property="og:title" content="Микролаба от Павла Лукоянова" />
+		<meta property="og:description" content="Сравнение количества теплоты при смешивании воды разной температуры." />
+		<meta property="og:image" content="https://schoolnet.online/microlaba/voda/og-preview.png" />
+		<meta name="apple-mobile-web-app-title" content="Микролаба" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="stylesheet" href="base.css">
+		<link rel= "preload" href="../Inter-Medium.ttf" as="font">
+		<link rel= "preload" href="../Inter-Bold.ttf" as="font">
+		<link rel= "preload" href="../Inter-SemiBold.ttf" as="font">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<title>Микролаба</title>
+		<script src="jquery-3.6.0.min.js"></script>
+		<script src="base.js"></script>
+	</head>
+	<body id="body" style="">
+		<div class="loader_header" id="loader_header" style="position: absolute;">
+			<div id="schoolnet"></div>
+			<div class="microlab_logo" id="microlab_logo" style="pointer-events: none;"></div>
+		</div>
+		<div class="mobile_header_microlaba_wrapper" id="mobile_header_microlaba_wrapper" style="position: fixed; z-index: 5; display: none; top: 0">
+			<svg id="microlab_logo_m" class="microlab_logo_m"></svg>
+		</div>
+		<!--div id="mobile" style="">
+			<div id="mobile_header_wrapper">
+				<svg class="microlab_logo_m"></svg>
+				<p>К сожалению, Микролаба<br>пока не работает на мо-<br>бильных устройствах.</p>
+			</div>
+			<button id="mobile_button">Всё равно запустить!</button>
+		</div-->
+		<div id="loader" style="">
+			<div class="loader_header"></div>
+			<div class="mobile_header_microlaba" style="display: none;"></div>
+			<div id="loader_title" class="loaderi">
+				<p>Сравнение количества теплоты<br>при смешивании воды разной<br>температуры.</p>
+				<style>
+				.lds-spinner {
+				display: inline-block;
+				position: relative;
+				width: 80px;
+				height: 80px;
+				}
+				.lds-spinner div {
+				transform-origin: 40px 40px;
+				animation: lds-spinner 1.2s linear infinite;
+				}
+				.lds-spinner div:after {
+				content: " ";
+			    display: block;
+			    position: absolute;
+			    top: 3px;
+			    left: 36px;
+			    width: 7px;
+			    height: 18px;
+			    border-radius: 6px;
+			    background: #000000;
+				}
+				.lds-spinner div:nth-child(1) {
+				transform: rotate(0deg);
+				animation-delay: -1.1s;
+				}
+				.lds-spinner div:nth-child(2) {
+				transform: rotate(30deg);
+				animation-delay: -1s;
+				}
+				.lds-spinner div:nth-child(3) {
+				transform: rotate(60deg);
+				animation-delay: -0.9s;
+				}
+				.lds-spinner div:nth-child(4) {
+				transform: rotate(90deg);
+				animation-delay: -0.8s;
+				}
+				.lds-spinner div:nth-child(5) {
+				transform: rotate(120deg);
+				animation-delay: -0.7s;
+				}
+				.lds-spinner div:nth-child(6) {
+				transform: rotate(150deg);
+				animation-delay: -0.6s;
+				}
+				.lds-spinner div:nth-child(7) {
+				transform: rotate(180deg);
+				animation-delay: -0.5s;
+				}
+				.lds-spinner div:nth-child(8) {
+				transform: rotate(210deg);
+				animation-delay: -0.4s;
+				}
+				.lds-spinner div:nth-child(9) {
+				transform: rotate(240deg);
+				animation-delay: -0.3s;
+				}
+				.lds-spinner div:nth-child(10) {
+				transform: rotate(270deg);
+				animation-delay: -0.2s;
+				}
+				.lds-spinner div:nth-child(11) {
+				transform: rotate(300deg);
+				animation-delay: -0.1s;
+				}
+				.lds-spinner div:nth-child(12) {
+				transform: rotate(330deg);
+				animation-delay: 0s;
+				}
+				@keyframes lds-spinner {
+				0% {
+				opacity: 1;
+				}
+				100% {
+				opacity: 0;
+				}
+				}
+				</style>
+				<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+			<div id="loader_podval" class="loaderi">
+				<div class="complagaet_logo"></div>
+			</div>
+		</div>
+		<div id="main">
+			<header class="mainheader"></header>
+			<header id="mobile_header" style="display: none;">
+				<div class="mobile_header_microlaba">
+					<div class="mobile_header_microlaba_wrapper"></div>
+					<div class="mobile_header_microlaba_title">Сравнение количества теплоты<br>при смешивании воды разной<br>температуры.</div>
+				</div>
+				<div class="frame_output"> 
+					<div class="frame_output_content_wrapper">
+						<div class="frame_output_probirka">
+							<p id="output_water_volume_mobile">V = 0.00 L</p>
+						</div>
+						<div class="frame_output_termometer">
+							<p id="output_water_temp_mobile">t = 0.00 °C</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="workplace">
+				<div id="frame_otladka" style="display: none;">
+					<code id="pu">-</code>
+					<code id="ppu">-</code>
+					<code id="ppp">-</code>
+				</div>
+				<div class="menzurka_wrapper">
+					<div class="frame_clockplay_stopped pointer-events_none" id="play_button">
+						<div class="button_stop" id="znachok"></div>
+					</div>
+					<div class="frame_input_cold">
+						<div class="frame_data_line_wrapper">
+							<p style="font-family: 'Inter-SemiBold'">V =</p>
+							<div class="frame_data_values_wrapper" id="input_coldwater_volume_wrapper">
+								<input type="text" id="input_coldwater_volume" class="frame_data_valuestext_input" placeholder="...">
+								<p>L</p>
+							</div>
+						</div>
+						<div class="frame_data_line_wrapper">
+							<p style="font-family: 'Inter-SemiBold'">t =</p>
+							<div class="frame_data_values_wrapper" id="input_coldwater_temp_wrapper">
+								<input type="text" id="input_coldwater_temp" class="frame_data_valuestext_input" placeholder="...">
+								<p>°C</p>
+							</div>
+						</div>
+					</div>
+					<div class="frame_input_hot" id="frame_input_hot">
+						<div class="frame_data_line_wrapper">
+							<p style="font-family: 'Inter-SemiBold'">V =</p>
+							<div class="frame_data_values_wrapper" id="input_hotwater_volume_wrapper">
+								<input type="text" id="input_hotwater_volume" class="frame_data_valuestext_input" placeholder="...">
+								<p>L</p>
+							</div>
+						</div>
+						<div class="frame_data_line_wrapper">
+							<p style="font-family: 'Inter-SemiBold'">t =</p>
+							<div class="frame_data_values_wrapper" id="input_hotwater_temp_wrapper">
+								<input type="text" id="input_hotwater_temp" class="frame_data_valuestext_input" placeholder="...">
+								<p>°C</p>
+							</div>
+						</div>
+					</div>
+					<div style="margin-top: 123px; margin-left: 60px; position: absolute">
+						<div class="menzurka" id="menzurka_l">
+							<div class="menzurka_water" id="menzurka_l_water"></div>
+						</div>
+					</div>
+					<div class="gradusnik" id="gradusnik_left">
+						<div class="gradusnik_shkala">
+							<div class="gradusnik_shkala_red" id="term_hot"></div>
+						</div>
+					</div>
+					<div class="menzurka" id="menzurka_c">
+						<div class="menzurka_water" id="menzurka_c_water"></div>
+					</div>
+					<div id="plitka_c"></div>
+					<div class="gradusnik" id="gradusnik_center">
+						<div class="gradusnik_shkala" id="gradusnik_center_shkala">
+							<div class="gradusnik_shkala_red" id="gradusnik_center_shkala_red"></div>
+						</div>
+					</div>
+					<div style="margin-top: 225px; margin-left: 659px">
+						<div class="menzurka" id="menzurka_r">
+							<div class="menzurka_water" id="menzurka_r_water"></div>
+						</div>
+					</div>
+					<div class="gradusnik" id="gradusnik_right">
+						<div class="gradusnik_shkala">
+							<div class="gradusnik_shkala_red" id="term_cold"></div>
+						</div>
+					</div>
+				</div>
+				<div id="plitka_power_edit_mobile_wrapper" style="display: none">
+					<p>Мощность плитки</p>
+					<div style="display: flex; gap: 8px; align-items: center;">
+						<p>P = </p>
+						<div class="input_plitka_power_wrapper" id="input_plitka_power_mobile_wrapper" style="padding-left: 7px; padding-right: 7px; height: 50px; width: 200px; border-radius: 15px">
+							<input type="text" id="input_plitka_power_mobile" class="input_plitka_power" placeholder="..." value="2500" style="width: 140px; font-size: 27px">
+							<p>W</p>
+						</div>
+					</div>
+				</div>
+				<div class="frame_clock" style="display: none; flex-direction: row;">
+					<div class="frame_output_content_wrapper">
+						<div class="frame_plitka"></div>
+						<div class="frame_small_clock" style="display: none;">
+							<div class="clock_face">
+								<div class="clock_arrows">
+									<div class="clock_arrow_minutes" id="clock_arrow_minutes_mobile" style="transform: rotate(0deg)"></div>
+									<div class="clock_arrow_hours" id="clock_arrow_hours_mobile" style="transform: rotate(0deg)"></div>
+									<div class="clock_arrow_seconds" id="clock_arrow_seconds_mobile" style="transform: rotate(0deg)"></div>
+								</div>
+							</div>
+						</div>
+						<div class="frame_small_clock">
+							<div id="timer_value_mobile" class="frame_clocktimer_value">0 S</div>
+						</div>
+					</div>
+					<div class="frame_output_content_wrapper">
+						<div class="frame_water_mixing"></div>
+						<div class="frame_small_clock" style="display: none;">
+							<div class="clock_face">
+								<div class="clock_arrows">
+									<div class="clock_arrow_minutes" id="clock_arrow_minutes_1_mobile" style="transform: rotate(0deg)"></div>
+									<div class="clock_arrow_hours" id="clock_arrow_hours_1_mobile" style="transform: rotate(0deg)"></div>
+									<div class="clock_arrow_seconds" id="clock_arrow_seconds_1_mobile" style="transform: rotate(0deg)"></div>
+								</div>
+							</div>
+						</div>
+						<div class="frame_small_clock">
+							<div id="timer_value_1_mobile" class="frame_clocktimer_value">0 S</div>
+						</div>
+					</div>
+				</div>
+				<button id="mobile_button_sbros" style="display: none; pointer-events: none;" disabled>Сброс</button>
+			</div>
+			<footer class="podval">
+				<div class="plitka_power_edit">
+					<p>Мощность плитки</p>
+					<div style="display: flex; gap: 8px; align-items: center;">
+						<p>P = </p>
+						<div class="input_plitka_power_wrapper" id="input_plitka_power_wrapper">
+							<input type="text" id="input_plitka_power" class="input_plitka_power" placeholder="..." value="2500">
+							<p>W</p>
+						</div>
+					</div>
+				</div>
+				<div class="switcher_wrapper">
+					<p>Показания приборов</p>
+					<div class="switcher" id="switcher_autopicker">
+						<div class="switcher_dot" id="theme_dot"></div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<div id="menu">
+			<header class="header_title">Сравнение количества теплоты<br>при смешивании воды разной<br>температуры.</header>
+			<div class="frame_output"> 
+				<div id="frame_output_big_icon" style="display: none;">
+					<svg class="icon icon_vt" style="width: 100px; height: 100px"></svg>
+				</div>
+				<div id="frame_output_interface">
+					<div class="frame_header_wrapper">
+						<p>Показания приборов</p>
+						<svg class="icon icon_vt"></svg>
+					</div>
+					<div class="frame_output_content_wrapper">
+						<div class="frame_output_probirka">
+							<p id="output_water_volume">V = 0.00 L</p>
+						</div>
+						<div class="frame_output_termometer">
+							<p id="output_water_temp">t = 0.00 °C</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="frame_clock">
+				<div class="frame_header_wrapper header_timers" style="height: 30px">
+					<p style="color: #FFFFFF">Электроплитка</p>
+				</div>
+				<div class="frame_output_content_wrapper">
+					<div class="frame_plitka"></div>
+					<div class="frame_small_clock">
+						<div class="clock_face">
+							<div class="clock_arrows">
+								<div class="clock_arrow_minutes" id="clock_arrow_minutes" style="transform: rotate(0deg)"></div>
+								<div class="clock_arrow_hours" id="clock_arrow_hours" style="transform: rotate(0deg)"></div>
+								<div class="clock_arrow_seconds" id="clock_arrow_seconds" style="transform: rotate(0deg)"></div>
+							</div>
+						</div>
+					</div>
+					<div class="frame_small_clock">
+						<div id="timer_value" class="frame_clocktimer_value">0 S</div>
+					</div>
+				</div>
+				<div class="frame_header_wrapper header_timers" style="height: 30px">
+					<p style="color: #FFFFFF">Смешивание воды</p>
+				</div>
+				<div class="frame_output_content_wrapper">
+					<div class="frame_water_mixing"></div>
+					<div class="frame_small_clock">
+						<div class="clock_face">
+							<div class="clock_arrows">
+								<div class="clock_arrow_minutes" id="clock_arrow_minutes_1" style="transform: rotate(0deg)"></div>
+								<div class="clock_arrow_hours" id="clock_arrow_hours_1" style="transform: rotate(0deg)"></div>
+								<div class="clock_arrow_seconds" id="clock_arrow_seconds_1" style="transform: rotate(0deg)"></div>
+							</div>
+						</div>
+					</div>
+					<div class="frame_small_clock">
+						<div id="timer_value_1" class="frame_clocktimer_value">0 S</div>
+					</div>
+				</div>
+			</div>
+			<button id="sbros" disabled style="pointer-events: none;">Сброс</button>
+		</div>
+	</body>
+</html>

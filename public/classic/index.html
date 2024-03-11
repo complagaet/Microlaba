@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Cache-control" content="No-Cache">
+		<meta property="og:title" content="Микролаба от Павла Лукоянова" />
+		<meta property="og:description" content="Микролаба — набор виртуальных лабораторных работ." />
+		<meta property="og:image" content="https://schoolnet.online/microlaba/og-preview.png" />
+		<meta name="viewport" content="width=1100, user-scalable=no">
+		<meta name="apple-mobile-web-app-title" content="Микролаба" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="stylesheet" media="" href="base.css">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<title>Микролаба</title>
+	</head>
+	<body id="body">
+		<div id="loader_header" style="position: absolute;">
+			<div id="schoolnet"></div>
+			<div class="microlab_logo" id="microlab_logo" style="opacity: 0;"></div>
+		</div>
+		<!--div id="mobile">
+			<div id="mobile_header_wrapper">
+				<svg class="microlab_logo_m"></svg>
+				<p>К сожалению, Микролаба<br>пока не работает на мо-<br>бильных устройствах.</p>
+			</div>
+			<button id="mobile_button">Всё равно запустить!</button>
+		</div-->
+		<div id="loader">
+			<div style="height: 80px; width: 100px;"></div>
+			<svg class="microlab_big loaderi"></svg>
+			<style>
+			.lds-spinner {
+			display: inline-block;
+			position: relative;
+			width: 80px;
+			height: 80px;
+			}
+			.lds-spinner div {
+			transform-origin: 40px 40px;
+			animation: lds-spinner 1.2s linear infinite;
+			}
+			.lds-spinner div:after {
+			content: " ";
+		    display: block;
+		    position: absolute;
+		    top: 3px;
+		    left: 36px;
+		    width: 7px;
+		    height: 18px;
+		    border-radius: 6px;
+		    background: #000000;
+			}
+			.lds-spinner div:nth-child(1) {
+			transform: rotate(0deg);
+			animation-delay: -1.1s;
+			}
+			.lds-spinner div:nth-child(2) {
+			transform: rotate(30deg);
+			animation-delay: -1s;
+			}
+			.lds-spinner div:nth-child(3) {
+			transform: rotate(60deg);
+			animation-delay: -0.9s;
+			}
+			.lds-spinner div:nth-child(4) {
+			transform: rotate(90deg);
+			animation-delay: -0.8s;
+			}
+			.lds-spinner div:nth-child(5) {
+			transform: rotate(120deg);
+			animation-delay: -0.7s;
+			}
+			.lds-spinner div:nth-child(6) {
+			transform: rotate(150deg);
+			animation-delay: -0.6s;
+			}
+			.lds-spinner div:nth-child(7) {
+			transform: rotate(180deg);
+			animation-delay: -0.5s;
+			}
+			.lds-spinner div:nth-child(8) {
+			transform: rotate(210deg);
+			animation-delay: -0.4s;
+			}
+			.lds-spinner div:nth-child(9) {
+			transform: rotate(240deg);
+			animation-delay: -0.3s;
+			}
+			.lds-spinner div:nth-child(10) {
+			transform: rotate(270deg);
+			animation-delay: -0.2s;
+			}
+			.lds-spinner div:nth-child(11) {
+			transform: rotate(300deg);
+			animation-delay: -0.1s;
+			}
+			.lds-spinner div:nth-child(12) {
+			transform: rotate(330deg);
+			animation-delay: 0s;
+			}
+			@keyframes lds-spinner {
+			0% {
+			opacity: 1;
+			}
+			100% {
+			opacity: 0;
+			}
+			}
+			</style>
+			<div class="lds-spinner loaderi"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+		</div>
+		<div id="header" style="transform: translateY(-100px);"></div>
+		<div class="mobile_header_microlaba_wrapper" id="mobile_header_microlaba_wrapper" style="position: fixed; z-index: 3; display: none; top: 0;">
+			<div id="microlab_logo_m" class="microlab_logo_m"></div>
+		</div>
+		<header id="mobile_header" style="display: none;">
+				<div class="mobile_header_microlaba">
+					<div class="mobile_header_microlaba_wrapper">
+						<div class="mobile_header_microlaba" style="display: none;"></div>
+					</div>
+				</div>
+		</header>
+		<div id="menu" class="menu">
+			<div class="menu_ice menu_entry" id="ice">Определение удельной<br>теплоты плавления льда.</div>
+			<div class="menu_voda menu_entry" id="voda">Сравнение количества теплоты<br>при смешивании воды разной<br>температуры.</div>
+			<div class="menu_eds menu_entry" id="eds">Определение ЭДС и внутреннего<br>сопротивления источника тока.</div>
+		</div>
+		<div id="podval" class="podval">
+			<svg class="complagaet_logo"></svg>
+		</div>
+	</body>
+	<script src="base.js"></script>
+</html>

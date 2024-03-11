@@ -1,0 +1,298 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@media (max-width: 1100px) and (hover: none) and (pointer: coarse) {
+	.menu {
+		flex-direction: column !important;
+		justify-content: flex-start !important;
+		padding-top: 250px !important;
+		padding-bottom: 140px !important;
+		height: auto !important;
+	}
+	.mainheader {
+		display: none !important;
+	}
+	#loader {
+		position: fixed !important;
+		top: 0;
+	}
+	#loader_header {
+		display: none !important;
+	}
+	#header {
+		display: none !important;
+	}
+	#mobile_header {
+		position: fixed;
+		top: 0;
+		gap: 0;
+		z-index: 2;
+		width: 100%;
+		background-color: #FFFFFF;
+		display: flex !important;
+		align-items: center;
+		flex-direction: column;
+	}
+	.mobile_header_microlaba {
+		min-height: 200px;
+		width: 100%;
+		display: flex !important;
+	}
+	.mobile_header_microlaba_wrapper {
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		min-width: 200px;
+		height: 200px;
+	}
+	.mobile_header_microlaba_title {
+		display: flex;
+		align-items: center;
+		padding-left: 30px;
+		font-family: "Inter-Bold";
+    	font-size: 27pt;
+		background-color: #35d3fb;
+		width: 100%;
+		height: 200px;
+	}
+	.podval {
+		position: fixed !important;
+		bottom: -1px;
+		background-color: #1A1A1AA9 !important;
+		padding-left: 0 !important;
+		justify-content: center !important;
+		height: 100px !important;
+		backdrop-filter: blur(36px) !important;
+		-webkit-backdrop-filter: blur(36px) !important;
+	}
+	.menu_entry {
+		min-height: 826px !important;
+    	min-width: 726px !important;
+    	font-size: 27pt !important;
+    	padding-top: 30px !important;
+	}
+}
+@media (max-height: 1850px){
+	#mobile {
+		background-size: 50% !important;
+	}
+}
+@media (max-height: 650px) {
+	.menu {
+		transform: scale(0.7);
+		margin-top: -50px;
+	}
+}
+@font-face 
+{
+	font-family: "Inter-SemiBold";
+	src: url("Inter-SemiBold.ttf");
+}
+@font-face 
+{
+	font-family: "Inter-Bold";
+	src: url("Inter-Bold.ttf");
+}
+@font-face 
+{
+	font-family: "Inter-Medium";
+	src: url("Inter-Medium.ttf");
+}
+html {
+
+}
+body {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #1A1A1A;
+}
+#mobile {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	z-index: 2;
+	font-family: "Inter-Bold";
+	font-size: 42pt;
+	color: #FFFFFF;
+	text-align: center;
+	background-image: url("webp/iphone.webp");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 60%;
+}
+#mobile_header_wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	gap: 50px
+}
+.microlab_logo_m {
+	display: flex;
+	align-items: center;
+	height: 128px;
+	width: 116px;
+	background-image: url("SVG/microlab_logo.svg");
+	background-repeat: no-repeat;
+	transition-duration: 0.5s;
+}
+/*.microlab_logo_m::after {
+	display: flex;
+	z-index: 2;
+	font-family: "Inter-SemiBold";
+	font-size: 45pt;
+	margin-left: 140px;
+	content: "Микролаба";
+}*/
+#mobile_button {
+	appearance: none;
+    border: 0px;
+    border-radius: 100px;
+	background-color: #FFFFFF;
+    height: 161px;
+    width: 90%;
+    color:  #000000;
+    font-size: 40pt;
+    font-family: inherit;
+    transition-duration: 0.3s;
+}
+#mobile_button:hover {
+	transform: scale(0.95);
+}
+#schoolnet {
+	background-image: url("SVG/moodle_i.svg");
+	background-repeat: no-repeat;
+	cursor: pointer;
+	height: 100px;
+	width: 150px;
+	margin-left: -180px;
+	transition-duration: 0.6s;
+}
+.loaderi {
+	transition-duration: 0.3s;
+	opacity: 0;
+}
+#loader {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	background-color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	transition-duration: 0.8s;
+	animation-timing-function: ease-out;
+}
+.microlab_big {
+	height: 160px;
+	width: 674px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 337 80'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23ffb564;%7D.cls-2%7Bfill:%23feb465;%7D.cls-3%7Bfill:%23fdb266;%7D.cls-4%7Bfill:%23fcb168;%7D.cls-5%7Bfill:%23fcb069;%7D.cls-6%7Bfill:%23fbae6a;%7D.cls-7%7Bfill:%23faad6b;%7D.cls-8%7Bfill:%23f9ab6c;%7D.cls-9%7Bfill:%23f8aa6e;%7D.cls-10%7Bfill:%23f7a96f;%7D.cls-11%7Bfill:%23f7a770;%7D.cls-12%7Bfill:%23f6a671;%7D.cls-13%7Bfill:%23f5a572;%7D.cls-14%7Bfill:%23f4a374;%7D.cls-15%7Bfill:%23f3a275;%7D.cls-16%7Bfill:%23f2a076;%7D.cls-17%7Bfill:%23f29f77;%7D.cls-18%7Bfill:%23f19e78;%7D.cls-19%7Bfill:%23f09c79;%7D.cls-20%7Bfill:%23ef9b7b;%7D.cls-21%7Bfill:%23ee9a7c;%7D.cls-22%7Bfill:%23ed987d;%7D.cls-23%7Bfill:%23ec977e;%7D.cls-24%7Bfill:%23ec967f;%7D.cls-25%7Bfill:%23eb9481;%7D.cls-26%7Bfill:%23ea9382;%7D.cls-27%7Bfill:%23e99183;%7D.cls-28%7Bfill:%23e89084;%7D.cls-29%7Bfill:%23e78f85;%7D.cls-30%7Bfill:%23e78d87;%7D.cls-31%7Bfill:%23e68c88;%7D.cls-32%7Bfill:%23e58b89;%7D.cls-33%7Bfill:%23e4898a;%7D.cls-34%7Bfill:%23e3888b;%7D.cls-35%7Bfill:%23e2868d;%7D.cls-36%7Bfill:%23e2858e;%7D.cls-37%7Bfill:%23e1848f;%7D.cls-38%7Bfill:%23e08290;%7D.cls-39%7Bfill:%23df8191;%7D.cls-40%7Bfill:%23de8093;%7D.cls-41%7Bfill:%23dd7e94;%7D.cls-42%7Bfill:%23dc7d95;%7D.cls-43%7Bfill:%23dc7c96;%7D.cls-44%7Bfill:%23db7a97;%7D.cls-45%7Bfill:%23da7998;%7D.cls-46%7Bfill:%23d9779a;%7D.cls-47%7Bfill:%23d8769b;%7D.cls-48%7Bfill:%23d7759c;%7D.cls-49%7Bfill:%23d7739d;%7D.cls-50%7Bfill:%23d6729e;%7D.cls-51%7Bfill:%23d571a0;%7D.cls-52%7Bfill:%23d46fa1;%7D.cls-53%7Bfill:%23d36ea2;%7D.cls-54%7Bfill:%23d26ca3;%7D.cls-55%7Bfill:%23d26ba4;%7D.cls-56%7Bfill:%23d16aa6;%7D.cls-57%7Bfill:%23d068a7;%7D.cls-58%7Bfill:%23cf67a8;%7D.cls-59%7Bfill:%23ce67aa;%7D.cls-60%7Bfill:%23cc68ab;%7D.cls-61%7Bfill:%23cb68ad;%7D.cls-62%7Bfill:%23c968ae;%7D.cls-63%7Bfill:%23c869b0;%7D.cls-64%7Bfill:%23c769b1;%7D.cls-65%7Bfill:%23c569b3;%7D.cls-66%7Bfill:%23c46ab4;%7D.cls-67%7Bfill:%23c26ab6;%7D.cls-68%7Bfill:%23c16ab7;%7D.cls-69%7Bfill:%23c06ab9;%7D.cls-70%7Bfill:%23be6bba;%7D.cls-71%7Bfill:%23bd6bbc;%7D.cls-72%7Bfill:%23bb6bbd;%7D.cls-73%7Bfill:%23ba6cbf;%7D.cls-74%7Bfill:%23b96cc0;%7D.cls-75%7Bfill:%23b76cc2;%7D.cls-76%7Bfill:%23b66dc3;%7D.cls-77%7Bfill:%23b46dc5;%7D.cls-78%7Bfill:%23b36dc7;%7D.cls-79%7Bfill:%23b26ec8;%7D.cls-80%7Bfill:%23b06eca;%7D.cls-81%7Bfill:%23af6ecb;%7D.cls-82%7Bfill:%23ad6fcd;%7D.cls-83%7Bfill:%23ac6fce;%7D.cls-84%7Bfill:%23ab6fd0;%7D.cls-85%7Bfill:%23a970d1;%7D.cls-86%7Bfill:%23a870d3;%7D.cls-87%7Bfill:%23a670d4;%7D.cls-88%7Bfill:%23a570d6;%7D.cls-89%7Bfill:%23a371d7;%7D.cls-90%7Bfill:%23a271d9;%7D.cls-91%7Bfill:%23a171da;%7D.cls-92%7Bfill:%239f72dc;%7D.cls-93%7Bfill:%239e72dd;%7D.cls-94%7Bfill:%239c72df;%7D.cls-95%7Bfill:%239b73e0;%7D.cls-96%7Bfill:%239a73e2;%7D.cls-97%7Bfill:%239873e4;%7D.cls-98%7Bfill:%239774e5;%7D.cls-99%7Bfill:%239574e7;%7D.cls-100%7Bfill:%239474e8;%7D.cls-101%7Bfill:%239375ea;%7D.cls-102%7Bfill:%239175eb;%7D.cls-103%7Bfill:%239075ed;%7D.cls-104%7Bfill:%238e76ee;%7D.cls-105%7Bfill:%238d76f0;%7D.cls-106%7Bfill:%238c76f1;%7D.cls-107%7Bfill:%238a76f3;%7D.cls-108%7Bfill:%238977f4;%7D.cls-109%7Bfill:%238777f6;%7D.cls-110%7Bfill:%238677f7;%7D.cls-111%7Bfill:%238578f9;%7D.cls-112%7Bfill:%238378fa;%7D.cls-113%7Bfill:%238278fc;%7D.cls-114%7Bfill:%238079fd;%7D.cls-115%7Bfill:%237f79ff;%7D.cls-116%7Bfill:%23817aff;opacity:1;%7D.cls-117%7Bfill:%23827aff;opacity:1;%7D.cls-118%7Bfill:%23847bff;opacity:1;%7D.cls-119%7Bfill:%23867cff;opacity:1;%7D.cls-120%7Bfill:%23877cff;opacity:0.99;%7D.cls-121%7Bfill:%23897dff;opacity:0.99;%7D.cls-122%7Bfill:%238b7eff;opacity:0.99;%7D.cls-123%7Bfill:%238c7eff;opacity:0.99;%7D.cls-124%7Bfill:%238e7fff;opacity:0.99;%7D.cls-125%7Bfill:%238f80ff;opacity:0.99;%7D.cls-126%7Bfill:%239180ff;opacity:0.99;%7D.cls-127%7Bfill:%239381ff;opacity:0.99;%7D.cls-128%7Bfill:%239482ff;opacity:0.99;%7D.cls-129%7Bfill:%239682ff;opacity:0.99;%7D.cls-130%7Bfill:%239883ff;opacity:0.98;%7D.cls-131%7Bfill:%239984ff;opacity:0.98;%7D.cls-132%7Bfill:%239b84ff;opacity:0.98;%7D.cls-133%7Bfill:%239d85ff;opacity:0.98;%7D.cls-134%7Bfill:%239e86ff;opacity:0.98;%7D.cls-135%7Bfill:%23a086ff;opacity:0.98;%7D.cls-136%7Bfill:%23a287ff;opacity:0.98;%7D.cls-137%7Bfill:%23a388ff;opacity:0.98;%7D.cls-138%7Bfill:%23a588ff;opacity:0.98;%7D.cls-139%7Bfill:%23a789ff;opacity:0.97;%7D.cls-140%7Bfill:%23a88aff;opacity:0.97;%7D.cls-141%7Bfill:%23aa8aff;opacity:0.97;%7D.cls-142%7Bfill:%23ac8bff;opacity:0.97;%7D.cls-143%7Bfill:%23ad8cff;opacity:0.97;%7D.cls-144%7Bfill:%23af8cff;opacity:0.97;%7D.cls-145%7Bfill:%23b08dff;opacity:0.97;%7D.cls-146%7Bfill:%23b28eff;opacity:0.97;%7D.cls-147%7Bfill:%23b48eff;opacity:0.97;%7D.cls-148%7Bfill:%23b58fff;opacity:0.97;%7D.cls-149%7Bfill:%23b790ff;opacity:0.96;%7D.cls-150%7Bfill:%23b990ff;opacity:0.96;%7D.cls-151%7Bfill:%23ba91ff;opacity:0.96;%7D.cls-152%7Bfill:%23bc92ff;opacity:0.96;%7D.cls-153%7Bfill:%23be92ff;opacity:0.96;%7D.cls-154%7Bfill:%23bf93ff;opacity:0.96;%7D.cls-155%7Bfill:%23c194ff;opacity:0.96;%7D.cls-156%7Bfill:%23c394ff;opacity:0.96;%7D.cls-157%7Bfill:%23c495ff;opacity:0.96;%7D.cls-158%7Bfill:%23c696ff;opacity:0.95;%7D.cls-159%7Bfill:%23c896ff;opacity:0.95;%7D.cls-160%7Bfill:%23c997ff;opacity:0.95;%7D.cls-161%7Bfill:%23cb98ff;opacity:0.95;%7D.cls-162%7Bfill:%23cd98ff;opacity:0.95;%7D.cls-163%7Bfill:%23ce99ff;opacity:0.95;%7D.cls-164%7Bfill:%23d09aff;opacity:0.95;%7D.cls-165%7Bfill:%23d19aff;opacity:0.95;%7D.cls-166%7Bfill:%23d39bff;opacity:0.95;%7D.cls-167%7Bfill:%23d59cff;opacity:0.95;%7D.cls-168%7Bfill:%23d69cff;opacity:0.94;%7D.cls-169%7Bfill:%23d89dff;opacity:0.94;%7D.cls-170%7Bfill:%23da9eff;opacity:0.94;%7D.cls-171%7Bfill:%23db9eff;opacity:0.94;%7D.cls-172%7Bfill:%23dd9fff;opacity:0.94;%7D.cls-173%7Bfill:none;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath d='M93.06,25.72h6.49l8.69,21.21h.35l8.69-21.21h6.49V55h-5.09V34.88h-.27l-8.09,20h-3.81L98.42,34.84h-.27V55H93.06Z'/%3E%3Cpath d='M134.3,48l8.79-15h5.32V55h-5V40l-8.76,15h-5.34V33h5Z'/%3E%3Cpath d='M153.71,55V33h5.18V41.9h1.89l6.6-8.86h6.23l-8.13,10.77L173.7,55h-6.26l-6-8.27h-2.53V55Z'/%3E%3Cpath d='M176.63,63.23V33h5.09v3.63h.3A8.81,8.81,0,0,1,183.15,35a5.93,5.93,0,0,1,2-1.56,6.87,6.87,0,0,1,3.17-.65,8.47,8.47,0,0,1,4.6,1.29,9.07,9.07,0,0,1,3.26,3.82,14.31,14.31,0,0,1,1.2,6.18,14.45,14.45,0,0,1-1.18,6.15,9.05,9.05,0,0,1-3.23,3.86,8.38,8.38,0,0,1-4.63,1.33,6.86,6.86,0,0,1-3.13-.63,6.33,6.33,0,0,1-2-1.52,9,9,0,0,1-1.16-1.7h-.22v11.7ZM181.7,44a10.44,10.44,0,0,0,.61,3.74,5.56,5.56,0,0,0,1.76,2.49,4.89,4.89,0,0,0,5.67,0,5.67,5.67,0,0,0,1.75-2.53,10.66,10.66,0,0,0,.59-3.67,10.47,10.47,0,0,0-.59-3.63,5.47,5.47,0,0,0-1.74-2.48,5,5,0,0,0-5.7,0,5.19,5.19,0,0,0-1.75,2.44A10.36,10.36,0,0,0,181.7,44Z'/%3E%3Cpath d='M211.35,55.42A10.68,10.68,0,0,1,205.77,54a9.64,9.64,0,0,1-3.65-4,13,13,0,0,1-1.29-5.95,13.08,13.08,0,0,1,1.29-6,9.57,9.57,0,0,1,3.65-4,11.73,11.73,0,0,1,11.15,0,9.59,9.59,0,0,1,3.66,4,13.08,13.08,0,0,1,1.29,6,13,13,0,0,1-1.29,5.95,9.66,9.66,0,0,1-3.66,4A10.65,10.65,0,0,1,211.35,55.42Zm0-4.14a4.44,4.44,0,0,0,2.91-1A5.74,5.74,0,0,0,216,47.72a11.74,11.74,0,0,0,0-7.29,5.8,5.8,0,0,0-1.75-2.61,4.44,4.44,0,0,0-2.91-1,4.57,4.57,0,0,0-3,1,5.82,5.82,0,0,0-1.76,2.61,11.74,11.74,0,0,0,0,7.29,5.76,5.76,0,0,0,1.76,2.59A4.57,4.57,0,0,0,211.38,51.28Z'/%3E%3Cpath d='M224.73,55l0-4.26h.76a2.62,2.62,0,0,0,1.44-.38,2.77,2.77,0,0,0,1-1.3,9.6,9.6,0,0,0,.6-2.45,35.37,35.37,0,0,0,.3-3.84l.39-9.72h16V55h-5V37.28h-6.31l-.34,7.08a26.23,26.23,0,0,1-.61,4.75,10.44,10.44,0,0,1-1.34,3.31,5.51,5.51,0,0,1-2.17,1.94,7,7,0,0,1-3.07.63Z'/%3E%3Cpath d='M256.7,55.44a9,9,0,0,1-3.75-.76,6,6,0,0,1-2.63-2.22,6.5,6.5,0,0,1-1-3.63,6.26,6.26,0,0,1,.68-3.07,5.33,5.33,0,0,1,1.88-1.95,9.61,9.61,0,0,1,2.68-1.1,20.33,20.33,0,0,1,3.09-.55c1.29-.14,2.33-.26,3.13-.37a4.63,4.63,0,0,0,1.75-.51,1.21,1.21,0,0,0,.55-1.1V40.1a3.23,3.23,0,0,0-1-2.5,3.84,3.84,0,0,0-2.75-.89,4.91,4.91,0,0,0-3,.83,4.08,4.08,0,0,0-1.5,2l-4.83-.69A7.74,7.74,0,0,1,252,35.46a8.27,8.27,0,0,1,3.21-2,12.52,12.52,0,0,1,4.21-.68,13.63,13.63,0,0,1,3.16.37,9.28,9.28,0,0,1,2.87,1.22,6.31,6.31,0,0,1,2.09,2.31,7.55,7.55,0,0,1,.8,3.65V55h-5V52h-.17a6,6,0,0,1-1.32,1.7A6.4,6.4,0,0,1,259.7,55,8.5,8.5,0,0,1,256.7,55.44Zm1.35-3.81a5.5,5.5,0,0,0,2.7-.62,4.45,4.45,0,0,0,1.76-1.65,4.21,4.21,0,0,0,.63-2.24V44.53a2.51,2.51,0,0,1-.83.37q-.57.16-1.29.3c-.48.09-.95.16-1.41.23l-1.22.17a9.21,9.21,0,0,0-2.07.52,3.41,3.41,0,0,0-1.45,1,2.49,2.49,0,0,0-.53,1.64,2.44,2.44,0,0,0,1,2.15A4.49,4.49,0,0,0,258.05,51.63Z'/%3E%3Cpath d='M291.11,24.92l1.8,3.34a6.05,6.05,0,0,1-2.14,1.2,11.88,11.88,0,0,1-2.78.48q-1.61.11-3.78.15a8.65,8.65,0,0,0-4,.93,5.66,5.66,0,0,0-2.39,2.64,13.63,13.63,0,0,0-1.08,4.49H277a7.27,7.27,0,0,1,2.89-3.07A8.61,8.61,0,0,1,284.21,34,9.43,9.43,0,0,1,289,35.24a8.38,8.38,0,0,1,3.27,3.54,12.2,12.2,0,0,1,1.18,5.61,12.66,12.66,0,0,1-1.27,5.86,9.09,9.09,0,0,1-3.61,3.83,11,11,0,0,1-5.54,1.34A10.68,10.68,0,0,1,277.52,54a9.25,9.25,0,0,1-3.63-4.13,16,16,0,0,1-1.28-6.76v-2q0-7.76,2.89-11.56t8.56-3.89c1.13,0,2.14,0,3,0a14.75,14.75,0,0,0,2.33-.13A3.59,3.59,0,0,0,291.11,24.92Zm-8,26.36a4.64,4.64,0,0,0,2.75-.83,5.18,5.18,0,0,0,1.78-2.33,9.53,9.53,0,0,0,.62-3.59,8.66,8.66,0,0,0-.63-3.48,4.65,4.65,0,0,0-4.55-2.95,5.34,5.34,0,0,0-2.16.42,4.54,4.54,0,0,0-1.63,1.26,5.91,5.91,0,0,0-1,2,10.09,10.09,0,0,0-.39,2.73,7.88,7.88,0,0,0,1.4,4.92A4.56,4.56,0,0,0,283.09,51.28Z'/%3E%3Cpath d='M304.22,55.44a9,9,0,0,1-3.75-.76,6,6,0,0,1-2.63-2.22,6.42,6.42,0,0,1-1-3.63,6.14,6.14,0,0,1,.69-3.07,5.3,5.3,0,0,1,1.87-1.95,9.61,9.61,0,0,1,2.68-1.1,20.78,20.78,0,0,1,3.09-.55c1.29-.14,2.33-.26,3.14-.37a4.63,4.63,0,0,0,1.75-.51,1.23,1.23,0,0,0,.55-1.1V40.1a3.23,3.23,0,0,0-1-2.5,3.88,3.88,0,0,0-2.76-.89,4.93,4.93,0,0,0-3,.83,4,4,0,0,0-1.49,2l-4.83-.69a7.83,7.83,0,0,1,1.88-3.35,8.31,8.31,0,0,1,3.22-2,12.5,12.5,0,0,1,4.2-.68,13.57,13.57,0,0,1,3.16.37,9.08,9.08,0,0,1,2.87,1.22,6.34,6.34,0,0,1,2.1,2.31,7.56,7.56,0,0,1,.79,3.65V55h-5V52h-.17a6.38,6.38,0,0,1-3.46,3A8.49,8.49,0,0,1,304.22,55.44Zm1.34-3.81a5.5,5.5,0,0,0,2.7-.62A4.48,4.48,0,0,0,310,49.36a4.3,4.3,0,0,0,.62-2.24V44.53a2.44,2.44,0,0,1-.82.37q-.58.16-1.29.3c-.48.09-1,.16-1.42.23l-1.22.17a9.21,9.21,0,0,0-2.07.52,3.31,3.31,0,0,0-1.44,1,2.49,2.49,0,0,0-.53,1.64,2.45,2.45,0,0,0,1,2.15A4.52,4.52,0,0,0,305.56,51.63Z'/%3E%3Ccircle class='cls-1' cx='28.59' cy='64.86' r='7.4'/%3E%3Ccircle class='cls-2' cx='28.57' cy='64.85' r='7.4'/%3E%3Ccircle class='cls-3' cx='28.52' cy='64.81' r='7.4'/%3E%3Ccircle class='cls-4' cx='28.45' cy='64.75' r='7.4'/%3E%3Ccircle class='cls-5' cx='28.35' cy='64.66' r='7.4'/%3E%3Ccircle class='cls-6' cx='28.22' cy='64.55' r='7.4'/%3E%3Ccircle class='cls-7' cx='28.07' cy='64.42' r='7.4'/%3E%3Ccircle class='cls-8' cx='27.9' cy='64.27' r='7.4'/%3E%3Ccircle class='cls-9' cx='27.71' cy='64.11' r='7.4'/%3E%3Ccircle class='cls-10' cx='27.5' cy='63.92' r='7.4'/%3E%3Ccircle class='cls-11' cx='27.28' cy='63.72' r='7.4'/%3E%3Ccircle class='cls-12' cx='27.04' cy='63.51' r='7.4'/%3E%3Ccircle class='cls-13' cx='26.8' cy='63.28' r='7.4'/%3E%3Ccircle class='cls-14' cx='26.54' cy='63.04' r='7.4'/%3E%3Ccircle class='cls-15' cx='26.28' cy='62.79' r='7.4'/%3E%3Ccircle class='cls-16' cx='26.01' cy='62.53' r='7.4'/%3E%3Ccircle class='cls-17' cx='25.73' cy='62.26' r='7.4'/%3E%3Ccircle class='cls-18' cx='25.46' cy='61.98' r='7.4'/%3E%3Ccircle class='cls-19' cx='25.18' cy='61.7' r='7.4'/%3E%3Ccircle class='cls-20' cx='24.91' cy='61.41' r='7.4'/%3E%3Ccircle class='cls-21' cx='24.64' cy='61.11' r='7.4'/%3E%3Ccircle class='cls-22' cx='24.37' cy='60.82' r='7.4'/%3E%3Ccircle class='cls-23' cx='24.11' cy='60.52' r='7.4'/%3E%3Ccircle class='cls-24' cx='23.87' cy='60.22' r='7.4'/%3E%3Ccircle class='cls-25' cx='23.63' cy='59.92' r='7.4'/%3E%3Ccircle class='cls-26' cx='23.41' cy='59.63' r='7.4'/%3E%3Ccircle class='cls-27' cx='23.2' cy='59.34' r='7.4'/%3E%3Ccircle class='cls-28' cx='23.01' cy='59.05' r='7.4'/%3E%3Ccircle class='cls-29' cx='22.84' cy='58.77' r='7.4'/%3E%3Ccircle class='cls-30' cx='22.69' cy='58.49' r='7.4'/%3E%3Ccircle class='cls-31' cx='22.56' cy='58.22' r='7.4'/%3E%3Ccircle class='cls-32' cx='22.45' cy='57.96' r='7.4'/%3E%3Ccircle class='cls-33' cx='22.38' cy='57.72' r='7.4'/%3E%3Ccircle class='cls-34' cx='22.33' cy='57.48' r='7.4'/%3E%3Ccircle class='cls-35' cx='22.31' cy='57.26' r='7.4'/%3E%3Ccircle class='cls-36' cx='22.33' cy='57.05' r='7.4'/%3E%3Ccircle class='cls-37' cx='22.38' cy='56.85' r='7.4'/%3E%3Ccircle class='cls-38' cx='22.46' cy='56.67' r='7.4'/%3E%3Ccircle class='cls-39' cx='22.58' cy='56.51' r='7.4'/%3E%3Ccircle class='cls-40' cx='22.75' cy='56.37' r='7.4'/%3E%3Ccircle class='cls-41' cx='22.95' cy='56.25' r='7.4'/%3E%3Ccircle class='cls-42' cx='23.2' cy='56.14' r='7.4'/%3E%3Ccircle class='cls-43' cx='23.5' cy='56.07' r='7.4'/%3E%3Ccircle class='cls-44' cx='23.84' cy='56.01' r='7.4'/%3E%3Ccircle class='cls-45' cx='24.23' cy='55.98' r='7.4'/%3E%3Ccircle class='cls-46' cx='24.67' cy='55.97' r='7.4'/%3E%3Ccircle class='cls-47' cx='25.17' cy='56' r='7.4'/%3E%3Ccircle class='cls-48' cx='25.72' cy='56.05' r='7.4'/%3E%3Ccircle class='cls-49' cx='26.33' cy='56.12' r='7.4'/%3E%3Ccircle class='cls-50' cx='27' cy='56.24' r='7.4'/%3E%3Ccircle class='cls-51' cx='27.73' cy='56.38' r='7.4'/%3E%3Ccircle class='cls-52' cx='28.52' cy='56.55' r='7.4'/%3E%3Ccircle class='cls-53' cx='29.37' cy='56.76' r='7.4'/%3E%3Ccircle class='cls-54' cx='30.3' cy='57.01' r='7.4'/%3E%3Ccircle class='cls-55' cx='31.29' cy='57.29' r='7.4'/%3E%3Ccircle class='cls-56' cx='32.35' cy='57.61' r='7.4'/%3E%3Ccircle class='cls-57' cx='33.48' cy='57.96' r='7.4'/%3E%3Ccircle class='cls-58' cx='34.69' cy='58.36' r='7.4'/%3E%3Ccircle class='cls-59' cx='35.87' cy='58.74' r='7.45'/%3E%3Ccircle class='cls-60' cx='36.91' cy='59.03' r='7.5'/%3E%3Ccircle class='cls-61' cx='37.82' cy='59.25' r='7.56'/%3E%3Ccircle class='cls-62' cx='38.6' cy='59.39' r='7.61'/%3E%3Ccircle class='cls-63' cx='39.27' cy='59.45' r='7.66'/%3E%3Ccircle class='cls-64' cx='39.82' cy='59.44' r='7.72'/%3E%3Ccircle class='cls-65' cx='40.26' cy='59.37' r='7.77'/%3E%3Ccircle class='cls-66' cx='40.6' cy='59.24' r='7.83'/%3E%3Ccircle class='cls-67' cx='40.83' cy='59.04' r='7.88'/%3E%3Ccircle class='cls-68' cx='40.98' cy='58.79' r='7.93'/%3E%3Ccircle class='cls-69' cx='41.04' cy='58.49' r='7.99'/%3E%3Ccircle class='cls-70' cx='41.02' cy='58.13' r='8.04'/%3E%3Ccircle class='cls-71' cx='40.92' cy='57.73' r='8.09'/%3E%3Ccircle class='cls-72' cx='40.75' cy='57.28' r='8.15'/%3E%3Ccircle class='cls-73' cx='40.52' cy='56.79' r='8.2'/%3E%3Ccircle class='cls-74' cx='40.22' cy='56.27' r='8.26'/%3E%3Ccircle class='cls-75' cx='39.87' cy='55.71' r='8.31'/%3E%3Ccircle class='cls-76' cx='39.47' cy='55.12' r='8.36'/%3E%3Ccircle class='cls-77' cx='39.03' cy='54.5' r='8.42'/%3E%3Ccircle class='cls-78' cx='38.55' cy='53.85' r='8.47'/%3E%3Ccircle class='cls-79' cx='38.04' cy='53.19' r='8.52'/%3E%3Ccircle class='cls-80' cx='37.5' cy='52.51' r='8.58'/%3E%3Ccircle class='cls-81' cx='36.93' cy='51.81' r='8.63'/%3E%3Ccircle class='cls-82' cx='36.35' cy='51.1' r='8.69'/%3E%3Ccircle class='cls-83' cx='35.77' cy='50.38' r='8.74'/%3E%3Ccircle class='cls-84' cx='35.17' cy='49.66' r='8.79'/%3E%3Ccircle class='cls-85' cx='34.57' cy='48.94' r='8.85'/%3E%3Ccircle class='cls-86' cx='33.98' cy='48.21' r='8.9'/%3E%3Ccircle class='cls-87' cx='33.4' cy='47.5' r='8.95'/%3E%3Ccircle class='cls-88' cx='32.84' cy='46.78' r='9.01'/%3E%3Ccircle class='cls-89' cx='32.3' cy='46.08' r='9.06'/%3E%3Ccircle class='cls-90' cx='31.79' cy='45.4' r='9.12'/%3E%3Ccircle class='cls-91' cx='31.3' cy='44.73' r='9.17'/%3E%3Ccircle class='cls-92' cx='30.86' cy='44.08' r='9.22'/%3E%3Ccircle class='cls-93' cx='30.46' cy='43.46' r='9.28'/%3E%3Ccircle class='cls-94' cx='30.11' cy='42.86' r='9.33'/%3E%3Ccircle class='cls-95' cx='29.81' cy='42.29' r='9.38'/%3E%3Ccircle class='cls-96' cx='29.57' cy='41.76' r='9.44'/%3E%3Ccircle class='cls-97' cx='29.4' cy='41.27' r='9.49'/%3E%3Ccircle class='cls-98' cx='29.3' cy='40.81' r='9.54'/%3E%3Ccircle class='cls-99' cx='29.27' cy='40.4' r='9.6'/%3E%3Ccircle class='cls-100' cx='29.33' cy='40.03' r='9.65'/%3E%3Ccircle class='cls-101' cx='29.47' cy='39.71' r='9.71'/%3E%3Ccircle class='cls-102' cx='29.71' cy='39.45' r='9.76'/%3E%3Ccircle class='cls-103' cx='30.04' cy='39.24' r='9.81'/%3E%3Ccircle class='cls-104' cx='30.48' cy='39.1' r='9.87'/%3E%3Ccircle class='cls-105' cx='31.02' cy='39.01' r='9.92'/%3E%3Ccircle class='cls-106' cx='31.68' cy='38.99' r='9.97'/%3E%3Ccircle class='cls-107' cx='32.46' cy='39.04' r='10.03'/%3E%3Ccircle class='cls-108' cx='33.37' cy='39.16' r='10.08'/%3E%3Ccircle class='cls-109' cx='34.4' cy='39.36' r='10.14'/%3E%3Ccircle class='cls-110' cx='35.57' cy='39.64' r='10.19'/%3E%3Ccircle class='cls-111' cx='36.89' cy='40' r='10.24'/%3E%3Ccircle class='cls-112' cx='38.34' cy='40.44' r='10.3'/%3E%3Ccircle class='cls-113' cx='39.96' cy='40.97' r='10.35'/%3E%3Ccircle class='cls-114' cx='41.73' cy='41.6' r='10.4'/%3E%3Ccircle class='cls-115' cx='43.66' cy='42.32' r='10.46'/%3E%3Ccircle class='cls-116' cx='45.6' cy='43.04' r='10.55'/%3E%3Ccircle class='cls-117' cx='47.4' cy='43.68' r='10.64'/%3E%3Ccircle class='cls-118' cx='49.06' cy='44.23' r='10.74'/%3E%3Ccircle class='cls-119' cx='50.58' cy='44.71' r='10.83'/%3E%3Ccircle class='cls-120' cx='51.97' cy='45.1' r='10.92'/%3E%3Ccircle class='cls-121' cx='53.22' cy='45.42' r='11.02'/%3E%3Ccircle class='cls-122' cx='54.36' cy='45.67' r='11.11'/%3E%3Ccircle class='cls-123' cx='55.38' cy='45.85' r='11.2'/%3E%3Ccircle class='cls-124' cx='56.27' cy='45.96' r='11.3'/%3E%3Ccircle class='cls-125' cx='57.06' cy='46' r='11.39'/%3E%3Ccircle class='cls-126' cx='57.74' cy='45.98' r='11.48'/%3E%3Ccircle class='cls-127' cx='58.31' cy='45.91' r='11.57'/%3E%3Ccircle class='cls-128' cx='58.78' cy='45.77' r='11.67'/%3E%3Ccircle class='cls-129' cx='59.15' cy='45.58' r='11.76'/%3E%3Ccircle class='cls-130' cx='59.43' cy='45.35' r='11.85'/%3E%3Ccircle class='cls-131' cx='59.63' cy='45.06' r='11.95'/%3E%3Ccircle class='cls-132' cx='59.74' cy='44.72' r='12.04'/%3E%3Ccircle class='cls-133' cx='59.76' cy='44.34' r='12.13'/%3E%3Ccircle class='cls-134' cx='59.71' cy='43.92' r='12.23'/%3E%3Ccircle class='cls-135' cx='59.59' cy='43.46' r='12.32'/%3E%3Ccircle class='cls-136' cx='59.4' cy='42.97' r='12.41'/%3E%3Ccircle class='cls-137' cx='59.14' cy='42.44' r='12.51'/%3E%3Ccircle class='cls-138' cx='58.82' cy='41.88' r='12.6'/%3E%3Ccircle class='cls-139' cx='58.44' cy='41.29' r='12.69'/%3E%3Ccircle class='cls-140' cx='58.02' cy='40.68' r='12.78'/%3E%3Ccircle class='cls-141' cx='57.54' cy='40.05' r='12.88'/%3E%3Ccircle class='cls-142' cx='57.01' cy='39.39' r='12.97'/%3E%3Ccircle class='cls-143' cx='56.45' cy='38.72' r='13.06'/%3E%3Ccircle class='cls-144' cx='55.85' cy='38.04' r='13.16'/%3E%3Ccircle class='cls-145' cx='55.21' cy='37.34' r='13.25'/%3E%3Ccircle class='cls-146' cx='54.55' cy='36.63' r='13.34'/%3E%3Ccircle class='cls-147' cx='53.86' cy='35.91' r='13.44'/%3E%3Ccircle class='cls-148' cx='53.14' cy='35.19' r='13.53'/%3E%3Ccircle class='cls-149' cx='52.42' cy='34.47' r='13.62'/%3E%3Ccircle class='cls-150' cx='51.67' cy='33.75' r='13.72'/%3E%3Ccircle class='cls-151' cx='50.92' cy='33.04' r='13.81'/%3E%3Ccircle class='cls-152' cx='50.16' cy='32.33' r='13.9'/%3E%3Ccircle class='cls-153' cx='49.4' cy='31.62' r='13.99'/%3E%3Ccircle class='cls-154' cx='48.64' cy='30.93' r='14.09'/%3E%3Ccircle class='cls-155' cx='47.89' cy='30.26' r='14.18'/%3E%3Ccircle class='cls-156' cx='47.15' cy='29.6' r='14.27'/%3E%3Ccircle class='cls-157' cx='46.43' cy='28.96' r='14.37'/%3E%3Ccircle class='cls-158' cx='45.72' cy='28.34' r='14.46'/%3E%3Ccircle class='cls-159' cx='45.03' cy='27.75' r='14.55'/%3E%3Ccircle class='cls-160' cx='44.37' cy='27.19' r='14.65'/%3E%3Ccircle class='cls-161' cx='43.74' cy='26.65' r='14.74'/%3E%3Ccircle class='cls-162' cx='43.14' cy='26.15' r='14.83'/%3E%3Ccircle class='cls-163' cx='42.58' cy='25.68' r='14.93'/%3E%3Ccircle class='cls-164' cx='42.07' cy='25.25' r='15.02'/%3E%3Ccircle class='cls-165' cx='41.6' cy='24.87' r='15.11'/%3E%3Ccircle class='cls-166' cx='41.18' cy='24.52' r='15.2'/%3E%3Ccircle class='cls-167' cx='40.81' cy='24.22' r='15.3'/%3E%3Ccircle class='cls-168' cx='40.5' cy='23.97' r='15.39'/%3E%3Ccircle class='cls-169' cx='40.25' cy='23.77' r='15.48'/%3E%3Ccircle class='cls-170' cx='40.07' cy='23.63' r='15.58'/%3E%3Ccircle class='cls-171' cx='39.96' cy='23.54' r='15.67'/%3E%3Ccircle class='cls-172' cx='39.92' cy='23.51' r='15.76'/%3E%3Crect class='cls-173' width='337' height='80'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+}
+#header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	min-height: 100px;
+	background-color: #FFFFFF;
+	padding-left: 23px;
+	transition-duration: 0.8s;
+	animation-timing-function: ease-in-out;
+}
+.microlab_logo {
+	display: flex;
+	align-items: center;
+	height: 64px;
+	width: 58px;
+	background-image: url("SVG/microlab_logo.svg");
+	background-repeat: no-repeat;
+	transition-duration: 0.5s;
+}
+.microlab_logo::after {
+	display: flex;
+	font-family: "Inter-SemiBold";
+	font-size: 28pt;
+	margin-left: 73px;
+	content: "Микролаба";
+}
+#loader_header {
+	padding-left: 23px;
+	display: flex;
+	align-items: center;
+	width: 550px;
+	min-height: 100px;
+	z-index: 2;
+    gap: 30px;
+}
+.menu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	background-color: #1A1A1A;
+	gap: 40px;
+}
+.menu_entry {
+	font-family: "Inter-Bold";
+	font-size: 14pt;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	padding: 24px;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+.menu_entry:hover {
+	transform: scale(0.95);
+	opacity: 0.95;
+}
+.menu_voda {
+	background: url("webp/menu_voda.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 413px;
+    width: 363px;
+}
+.menu_eds {
+	background: url("webp/menu_eds.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+    height: 413px;
+    width: 363px;
+}
+.menu_ice {
+	background: url("webp/menu_ice.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+    height: 413px;
+    width: 363px;
+}
+.podval {
+	display: flex;
+	align-items: center;
+	min-height: 80px;
+	width: 100%;
+	background-color: #1A1A1A;
+	padding-left: 23px;
+}
+.complagaet_logo {
+	background: url("SVG/complagaet_logo.svg");
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 190px;
+}

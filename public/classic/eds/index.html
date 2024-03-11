@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Cache-control" content="No-Cache">
+		<meta property="og:title" content="Микролаба от Павла Лукоянова" />
+		<meta property="og:description" content="Определение ЭДС и внутреннего сопротивления источника тока." />
+		<meta property="og:image" content="https://schoolnet.online/microlaba/eds/og-preview.png" />
+		<meta name="apple-mobile-web-app-title" content="Микролаба" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="stylesheet" media="" href="base1000.css">
+		<link rel= "preload" href="../Inter-Medium.ttf" as="font">
+		<link rel= "preload" href="../Inter-Bold.ttf" as="font">
+		<link rel= "preload" href="../Inter-SemiBold.ttf" as="font">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<title>Микролаба</title>
+		<script src="jquery-3.6.0.min.js"></script>
+	</head>
+	<body id="body">
+		<div id="loader_header" style="position: absolute;">
+			<div id="schoolnet"></div>
+			<div class="microlab_logo" id="microlab_logo" style="pointer-events: none;"></div>
+		</div>
+		<div id="mobile">
+			<div id="mobile_header_wrapper">
+				<svg class="microlab_logo_m"></svg>
+				<p>К сожалению, этот опыт<br>пока не оптимизирован<br>для мобильных устройств.</p>
+			</div>
+			<button id="mobile_button">Всё равно запустить!</button>
+		</div>
+		<div id="loadtrash" style="opacity: 0; height: 0px; width: 0px;">
+			<div class="switcher" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="switcher_off" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="switcher_on" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="switcher_dot" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_output" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_battery" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_scheme" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_circle" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_vopros" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_close" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_kvass" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_lbp" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_power" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_battery_frame" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_reostat" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_resistor" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_resistor_frame" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_reostat_frame" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_interval" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_ampermeter" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_voltmeter" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_meters" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="icon_switch" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="button_gray" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="button_green" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="microlab_logo" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_output" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_akb" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_lab_power" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_switch" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_utilites_pink" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_utilites_orange_1" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_utilites_blue" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_utilites_orange" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="scheme_1_preview" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="scheme_2_preview" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="scheme_3_preview" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="scheme1_wires" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="scheme2_wires" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="scheme3_wires" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="arrow" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="arrow_mask" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="V_meter" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="A_meter" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="battery_kvass" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="battery_lbp" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="battery" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="reostat" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="resistor" style="opacity: 0; height: 0px; width: 0px;"></div>
+			<div class="frame_info_pribor" style="opacity: 0; height: 0px; width: 0px;"></div>
+		</div>
+		<div id="loader">
+			<div id="loader_header"></div>
+			<div id="loader_title" class="loaderi">
+				<p>Определение ЭДС и внутреннего<br>сопротивления источника тока.</p>
+				<style>
+				.lds-spinner {
+				display: inline-block;
+				position: relative;
+				width: 80px;
+				height: 80px;
+				}
+				.lds-spinner div {
+				transform-origin: 40px 40px;
+				animation: lds-spinner 1.2s linear infinite;
+				}
+				.lds-spinner div:after {
+				content: " ";
+			    display: block;
+			    position: absolute;
+			    top: 3px;
+			    left: 36px;
+			    width: 7px;
+			    height: 18px;
+			    border-radius: 6px;
+			    background: #000000;
+				}
+				.lds-spinner div:nth-child(1) {
+				transform: rotate(0deg);
+				animation-delay: -1.1s;
+				}
+				.lds-spinner div:nth-child(2) {
+				transform: rotate(30deg);
+				animation-delay: -1s;
+				}
+				.lds-spinner div:nth-child(3) {
+				transform: rotate(60deg);
+				animation-delay: -0.9s;
+				}
+				.lds-spinner div:nth-child(4) {
+				transform: rotate(90deg);
+				animation-delay: -0.8s;
+				}
+				.lds-spinner div:nth-child(5) {
+				transform: rotate(120deg);
+				animation-delay: -0.7s;
+				}
+				.lds-spinner div:nth-child(6) {
+				transform: rotate(150deg);
+				animation-delay: -0.6s;
+				}
+				.lds-spinner div:nth-child(7) {
+				transform: rotate(180deg);
+				animation-delay: -0.5s;
+				}
+				.lds-spinner div:nth-child(8) {
+				transform: rotate(210deg);
+				animation-delay: -0.4s;
+				}
+				.lds-spinner div:nth-child(9) {
+				transform: rotate(240deg);
+				animation-delay: -0.3s;
+				}
+				.lds-spinner div:nth-child(10) {
+				transform: rotate(270deg);
+				animation-delay: -0.2s;
+				}
+				.lds-spinner div:nth-child(11) {
+				transform: rotate(300deg);
+				animation-delay: -0.1s;
+				}
+				.lds-spinner div:nth-child(12) {
+				transform: rotate(330deg);
+				animation-delay: 0s;
+				}
+				@keyframes lds-spinner {
+				0% {
+				opacity: 1;
+				}
+				100% {
+				opacity: 0;
+				}
+				}
+				</style>
+				<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+			<div id="loader_podval" class="loaderi">
+				<div class="complagaet_logo"></div>
+			</div>
+		</div>
+		<div id="main" class="main">
+			<div class="header"></div>
+			<div class="workplace" id="workplace" style="display: none">
+				<div class="scheme1" id="scheme1" style="">
+					<div class="scheme1_wires"></div>
+					<div class="VA_meter V_meter V_meter_scheme1">
+						<div class="meterdots">
+							<div class="voltmeter_bluedot"></div>
+							<div class="voltmeter_reddot"></div>
+						</div>
+						<div class="arrow" id="arrow_U1"></div>
+					</div>
+					<div class="arrow_mask V_meter_scheme1">
+						<p class="SemiBold_black">V</p>
+					</div>
+					<div class="VA_meter A_meter A_meter_scheme1">
+						<div class="meterdots">
+							<div class="voltmeter_bluedot"></div>
+							<div class="voltmeter_bluedot"></div>
+						</div>
+						<div class="arrow" id="arrow_I1"></div>
+					</div>
+					<div class="arrow_mask A_meter_scheme1">
+						<p class="SemiBold_black">A</p>
+					</div>
+					<div class="battery battery_1" id="battery_1"></div>
+					<div class="reostat reostat_1">
+						<input type="range" min="0" max="100" value="10" class="reostat_slider" id="reostat1_slider">
+					</div>
+				</div>
+				<div class="scheme2" id="scheme2">
+					<div class="scheme2_wires"></div>
+					<div class="VA_meter V_meter V_meter_scheme2">
+						<div class="meterdots">
+							<div class="voltmeter_bluedot"></div>
+							<div class="voltmeter_reddot"></div>
+						</div>
+						<div class="arrow" id="arrow_U2"></div>
+					</div>
+					<div class="arrow_mask V_meter_scheme2">
+						<p class="SemiBold_black">V</p>
+					</div>
+					<div class="VA_meter A_meter A_meter_scheme2">
+						<div class="meterdots">
+							<div class="voltmeter_bluedot"></div>
+							<div class="voltmeter_bluedot"></div>
+						</div>
+						<div class="arrow" id="arrow_I2"></div>
+					</div>
+					<div class="arrow_mask A_meter_scheme2">
+						<p class="SemiBold_black">A</p>
+					</div>
+					<div class="battery battery_2" id="battery_2"></div>
+					<div class="resistor resisror_2"></div>
+					<div class="reostat reostat_2">
+						<input type="range" min="0" max="100" value="10" class="reostat_slider" id="reostat2_slider">
+					</div>
+				</div>
+				<div class="scheme3" id="scheme3">
+					<div class="scheme3_wires"></div>
+					<div class="VA_meter V_meter V_meter_scheme3">
+						<div class="meterdots">
+							<div class="voltmeter_bluedot"></div>
+							<div class="voltmeter_reddot"></div>
+						</div>
+						<div class="arrow" id="arrow_U3"></div>
+					</div>
+					<div class="arrow_mask V_meter_scheme3">
+						<p class="SemiBold_black">V</p>
+					</div>
+					<div class="VA_meter A_meter A_meter_scheme3">
+						<div class="meterdots">
+							<div class="voltmeter_bluedot"></div>
+							<div class="voltmeter_bluedot"></div>
+						</div>
+						<div class="arrow" id="arrow_I3"></div>
+					</div>
+					<div class="arrow_mask A_meter_scheme3">
+						<p class="SemiBold_black">A</p>
+					</div>
+					<div class="battery battery_3" id="battery_3"></div>
+					<div class="reostat reostat_3_1">
+						<input type="range" min="0" max="100" value="10" class="reostat_slider" id="reostat3_1_slider">
+					</div>
+					<div class="reostat reostat_3_2">
+						<input type="range" min="0" max="100" value="30" class="reostat_slider" id="reostat3_2_slider">
+					</div>
+				</div>
+			</div>
+			<div class="scheme_info_screen" id="scheme_info_screen" style="display: none;">
+				<div class="frame_info_pribor">
+					<div class="frame_info_header">
+						<span class="scheme_selection_text_big">Информация о приборах</span>
+						<button class="icon_close button_blank" id="info_close"></button>
+					</div>
+					<div style="display: flex; align-items: center; height: 100%;">
+						<ul class="scheme_components">
+							<li>
+								<svg class="icon_battery_frame"></svg>
+								<p id="info_supply">бп</p>
+							</li>
+							<li>
+								<svg class="icon_ampermeter"></svg>
+								<p id="info_I1">а1</p>
+							</li>
+							<li>
+								<svg class="icon_voltmeter"></svg>
+								<p id="info_U1">в1</p>
+							</li>
+							<li>
+								<svg id="info_R1_icon" class="icon_reostat_frame"></svg>
+								<p id="info_R1">р1</p>
+							</li>
+							<li id="info_R2_p">
+								<svg class="icon_reostat_frame"></svg>
+								<p id="info_R2">р2</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="scheme_selection_screen" id="scheme_selection_screen">
+				<div class="scheme_selection_preview">
+					<div class="scheme_selection_preview_1">
+						<p class="scheme_selection_text_big">Выбор схемы</p>
+						<div class="scheme_selector">
+							<button class="button_gray button_blank button_green" id="button_s1">1</button>
+							<button class="button_gray button_blank" id="button_s2">2</button>
+							<button class="button_gray button_blank" id="button_s3">3</button>
+						</div>
+						<svg class="scheme_1_preview" id="scheme_preview"></svg>
+					</div>
+					<div class="scheme_selection_preview_1">
+						<p class="scheme_selection_text_big">Оборудование</p>
+						<ul class="scheme_components">
+							<li>
+								<svg class="icon_battery_frame"></svg>
+								<p>Источник питания</p>
+							</li>
+							<li>
+								<svg class="icon_ampermeter"></svg>
+								<p>Амперметр</p>
+							</li>
+							<li>
+								<svg class="icon_voltmeter"></svg>
+								<p>Вольтметр</p>
+							</li>
+							<li id="comp_resistor">
+								<svg class="icon_resistor_frame"></svg>
+								<p>Резистор</p>
+							</li>
+							<li id="comp_reostat1">
+								<svg class="icon_reostat_frame"></svg>
+								<p id="reostates">Реостат</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="scheme_selection_utilites">
+					<p class="scheme_selection_text_big">Настройки компонентов схемы</p>
+					<div class="scheme_selection_utilites_1">
+						<div class="frame_utilites_orange" id="frame_resistor">
+							<div class="frame_utilites_header_wrapper">
+								<div class="frame_utilites_header_wrapper">
+									<div class="frame_utilites_pripiska">
+										<svg class="icon_resistor"></svg>
+										<span>R1</span>
+									</div>
+									<svg class="icon_resistor_frame"></svg>
+								</div>
+							</div>
+							<div class="frame_utilites_content_wrapper">
+								<span>R =</span>
+								<div class="frame_utilites_input_wrapper" style="color: #ffffff" id="resistor_1_wrapper">
+									<input class="frame_utilites_input" id="resistor_1" type="text" placeholder="...">
+									Ω
+								</div>
+							</div>
+						</div>
+						<div class="frame_utilites frame_utilites_blue">
+							<div class="frame_utilites_header_wrapper">
+								<div id="reostat_1_header">
+									<div class="frame_utilites_pripiska">
+										<svg class="icon_reostat"></svg>
+										<span id="pripiska_reostat1">R1</span>
+									</div>
+									<svg class="icon_reostat_frame"></svg>
+								</div>
+								<div class="frame_utilites_mistake" style="display: none;" id="reostat_1_mistake_bar"></div>
+							</div>
+							<div class="frame_utilites_content_wrapper">
+								<span>Rmin =</span>
+								<div class="frame_utilites_input_wrapper" id="reostat_1_min_wrapper">
+									<input class="frame_utilites_input" id="reostat_1_min" type="text" placeholder="...">
+									Ω
+								</div>
+								<svg class="icon_interval"></svg>
+								<span>Rmax =</span>
+								<div class="frame_utilites_input_wrapper" id="reostat_1_max_wrapper">
+									<input class="frame_utilites_input" id="reostat_1_max" type="text" placeholder="...">
+									Ω
+								</div>
+							</div>
+						</div>
+						<div class="frame_utilites frame_utilites_orange_1" id="frame_reostat_2">
+							<div class="frame_utilites_header_wrapper">
+								<div id="reostat_2_header">
+									<div class="frame_utilites_pripiska">
+										<svg class="icon_reostat"></svg>
+										<span>R2</span>
+									</div>
+									<svg class="icon_reostat_frame"></svg>
+								</div>
+								<div class="frame_utilites_mistake" style="display: none;" id="reostat_2_mistake_bar"></div>
+							</div>
+							<div class="frame_utilites_content_wrapper">
+								<span>Rmin =</span>
+								<div class="frame_utilites_input_wrapper" id="reostat_2_min_wrapper">
+									<input class="frame_utilites_input" id="reostat_2_min" type="text" placeholder="...">
+									Ω
+								</div>
+								<svg class="icon_interval"></svg>
+								<span>Rmax =</span>
+								<div class="frame_utilites_input_wrapper" id="reostat_2_max_wrapper">
+									<input class="frame_utilites_input" id="reostat_2_max" type="text" placeholder="...">
+									Ω
+								</div>
+							</div>
+						</div>
+						<div class="frame_utilites frame_utilites_pink" id="frame_utilites_supply">
+							<div class="frame_utilites_header_wrapper">
+								<svg class="icon_power"></svg>
+								<svg class="icon_battery_frame"></svg>
+							</div>
+							<p class="frame_utilites_content_wrapper SemiBold_white">Источник питания настраивается<br>во время эксперимента</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="podval" class="podval">
+				<div id="podval_1" class="podvaliki" style="display:flex; width: 100%; height: 100%;">
+					<div class="hide_output_wrapper" id="hide_output_wrapper">
+						<div class="hide_output_text" style="min-width: 300px; display: flex; justify-content: center;">
+							<div>Показания приборов</div>
+							<div class="switcher" id="pokaz">
+								<div class="switcher_dot" id="pokaz_dot"></div>
+							</div>
+						</div>
+					</div>
+					<button class="start_experiment" id="start_experiment">Старт!</button>
+				</div>
+			</div>
+		</div>
+		<div id="menu" class="menu">
+			<div class="header_title">Определение ЭДС<br>и внутреннего сопротивления<br>источника тока.</div>
+			<div class="digital_output">
+				<div class="digital_output_main_interface" id="digital_output_main_interface" style="display: none;">
+					<div class="window_header_wrapper">
+						<div class="SemiBold_white">Показания приборов</div>
+						<svg class="icon_output"></svg>
+					</div>
+					<div class="any_wrapper" style="padding-left: 0px; justify-content: center;">
+						<div class="frame_output">
+							<div class="output_wrapper">
+								<div class="icon_circle">A</div>
+								<div class="circle_number">1</div>
+							</div>
+							<div class="output_wrapper SemiBold_white" id="I1">I = 0.00 A</div>
+						</div>
+						<div class="frame_output">
+							<div class="output_wrapper">
+								<div class="icon_circle">V</div>
+								<div class="circle_number">1</div>
+							</div>
+							<div class="output_wrapper SemiBold_white" id="U1">U = 0.00 V</div>
+						</div>
+					</div>
+				</div>
+				<div class="digital_output_big_icon" id="digital_output_big_icon">
+					<svg class="icon_meters" style="height: 100px; width: 100px;"></svg>
+				</div>
+			</div>
+			<div class="power_supply_selection">
+				<div id="supply_main_interface" class="supply_main_interface" style="display: none;">
+					<div class="window_header_wrapper">
+						<div class="SemiBold_white">Источник питания</div>
+						<svg class="icon_battery"></svg>
+					</div>
+					<div class="any_wrapper flex_direction_column" style="padding-left: 0px; align-items: center;">
+						<div class="frame_akb" id="frame_kvass">
+							<div class="output_wrapper align_items_center">
+								<div class="icon_kvass"></div>
+								<div class="SemiBold_white marginleft10">Аккумулятор KVASS</div>
+							</div>
+							<div class="output_wrapper align_items_center height100">
+								<div class="SemiBold_white">U = 12 V</div>
+							</div>
+						</div>
+						<div class="frame_lab_power" id="frame_lbp">
+							<div class="output_wrapper align_items_center">
+								<div class="icon_lbp"></div>
+								<div class="SemiBold_white marginleft10">Лабораторный БП</div>
+							</div>
+							<div class="output_wrapper align_items_center">
+								<p style="width: 38px; display: flex; justify-content: space-between;" class="SemiBold_white">ε<span style="width: 20px;">=</span></p>
+								<input type="range" min="0" max="100" value="0" class="lbp_scrollbar" id="lbp_slider">
+							</div>
+							<div class="output_wrapper align_items_center" style="margin-top: 3px;">
+								<p style="width: 38px; display: flex; justify-content: space-between;" class="SemiBold_white">r<span style="width: 20px;">=</span></p>
+								<input style="background-color: #8268FF;" type="range" min="0" max="100" value="60" class="lbp_scrollbar" id="lbp_slider_2">
+							</div>
+							<div class="output_wrapper align_items_center">
+								<p class="SemiBold_white" id="lbp_u">-</p>
+							</div>
+						</div>
+						<div class="power_supply_selector_mini">
+							<button class="frame_switch supplysel button_blank" id="kvass_1">
+								<div class="output_wrapper align_items_center" style="gap: 10px;">
+									<svg class="icon_kvass" id="icon_switch"></svg>
+									<p class="SemiBold_white" id="label_switch">Аккумулятор KVASS</p>
+								</div>
+								<svg class="icon_switch"></svg>
+							</button>
+							<button class="frame_switch supplysel button_blank" id="lbp_1">
+								<div class="output_wrapper align_items_center" style="gap: 10px;">
+									<svg class="icon_lbp" id="icon_switch"></svg>
+									<p class="SemiBold_white" id="label_switch">Лабораторный БП</p>
+								</div>
+								<svg class="icon_switch"></svg>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div id="supply_selector_big" class="supply_big_icon" style="display: none;">
+					<p class="SemiBold_white">Выберите источник питания</p>
+					<div class="margintop6" style="display: flex; gap: 10px;">
+						<button class="icon_kvass button_blank supplysel cursor_pointer" id="kvass" style="height: 100px; width: 100px;"></button>
+						<button class="icon_lbp button_blank supplysel cursor_pointer" id="lbp" style="height: 100px; width: 100px;"></button>
+					</div>
+				</div>
+				<div id="supply_big_icon" class="supply_big_icon" style="">
+					<svg class="icon_battery_frame" id="supply_big_icon" class="supply_big_icon" style="height: 100px; width: 100px;"></svg>
+				</div>
+			</div>
+			<button class="scheme_selection" id="scheme_selection" disabled>
+				<div id="scheme_selection_1" style="opacity: 0; display: flex; width: 100%; height: 100%; justify-content: space-between; align-items: center; transition-duration: 0.3s">
+					<div>Сброс</div>
+					<div class="icon_scheme"></div>
+				</div>
+			</button>
+		</div>
+	</body>
+	<script src="base.js"></script>
+</html>
