@@ -2,9 +2,10 @@
 
 # Microlaba
 
-<p align=center style="text-align: center; font-size: 25px; font-weight: bold"><a href="https://complagaet.github.io/Microlaba/">Try Microlaba now!</a></p>
 Microlaba is a nice and modern educational platform with lessons and laboratory work in physics.
 *At the moment this is a demo prototype.*
+
+<h2 align=center style="text-align: center; font-size: 25px; font-weight: bold"><a href="https://complagaet.github.io/Microlaba/">Try Microlaba now!</a></h2>
 
 ![Main page](https://i.imgur.com/tvLRhWa.png)
 ![Main page](https://i.imgur.com/FufUZhX.png)
