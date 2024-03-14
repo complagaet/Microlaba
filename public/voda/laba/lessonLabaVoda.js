@@ -950,7 +950,9 @@ let main = () => {
 					document.getElementById("microlaba_big_logo").setAttribute("style", "display: none; transform: translateX(100px); margin-top: 0px; opacity: 0; transition-duration: 0.5s")
 					interface.horisScroll("lesson_complete_wrapper", "microlaba_big_logo", -100, 0)
 					setTimeout(() => {
-						interface.redirect(`${ window.location.href.replace(lessonNameL[1], b) }`, [`${window.location.href.replace(lessonNameL[1], b)}`, `${b}`], "")
+						let dest = window.location.href
+						dest = dest.slice(0, dest.lastIndexOf(lessonNameL[1])) + b + "/"
+						interface.redirect(dest, [dest, `${b}`], "")
 					}, 1000)
 				}
 			}
