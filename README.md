@@ -7,8 +7,8 @@ Microlaba is a nice and modern educational platform with lessons and laboratory 
 
 <h2 align=center style="text-align: center; font-size: 25px; font-weight: bold"><a href="https://complagaet.github.io/Microlaba/">Try Microlaba now!</a></h2>
 
-![Main page](https://i.imgur.com/tvLRhWa.png)
-![Main page](https://i.imgur.com/FufUZhX.png)
+![Main page](https://raw.githubusercontent.com/complagaet/Microlaba/refs/heads/main/images/1.png)
+![Main page](https://raw.githubusercontent.com/complagaet/Microlaba/refs/heads/main/images/2.png)
 
 ## Launch
 
